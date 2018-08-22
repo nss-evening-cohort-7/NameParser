@@ -35,6 +35,8 @@ namespace NameParser
                 middleName = Console.ReadLine();
                 var i = 0;
 
+
+
                 foreach (var letter in middleName)
                 {
                     Console.WriteLine(letter.ToString().PadLeft(++i));
