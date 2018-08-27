@@ -6,9 +6,10 @@ namespace NameParser
     {
         static void Main(string[] args)
         {
+            beginning:
             Console.WriteLine("Enter your first name");
             var firstName = Console.ReadLine();
-
+            
             foreach (var letter in firstName)
             {
                 Console.WriteLine(letter);
@@ -49,7 +50,9 @@ namespace NameParser
     
 
 
-                     And your parents hate you.");
+                     And your parents hate you. Press enter to be reborn to loving parents.");
+
+                goto beginning;
             }
 
             Console.WriteLine($"Goodbye {firstName} {middleName} {lastName}.  Press enter to exit.");
