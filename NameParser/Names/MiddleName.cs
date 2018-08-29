@@ -2,24 +2,21 @@
 
 namespace NameParser.Names
 {
-    class MiddleName
+    class MiddleName : NameBase
     {
-        private readonly FirstName _firstName;
+        FirstName _firstName;
 
-        public string Name { get; private set; }
-
-        public MiddleName(FirstName firstName)
+        public MiddleName(FirstName firstName) : base("middle")
         {
             Name = "";
             _firstName = firstName;
         }
 
-        public void GetName()
+        public override void GetName()
         {
             if (UserHasMiddleName())
             {
-                Console.WriteLine("What is it?");
-                Name = Console.ReadLine();
+                base.GetName();
             }
             else
             {
@@ -35,7 +32,7 @@ namespace NameParser.Names
             return hasMiddleName == "y";
         }
 
-        public void PrintName()
+        public override void PrintName()
         {
             var i = 0;
 

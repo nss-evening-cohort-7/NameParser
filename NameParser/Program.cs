@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 using NameParser.Names;
 
 namespace NameParser
@@ -12,15 +11,14 @@ namespace NameParser
             var middleName = new MiddleName(firstName);
             var lastName = new LastName();
 
-            firstName.GetName();
-            firstName.PrintName();
+            var names = new NameBase[] { firstName, lastName, middleName };
 
-            lastName.GetName();
-            lastName.PrintName();
+            foreach (var name in names)
+            {
+                name.GetName();
+                name.PrintName();
+            }
 
-            middleName.GetName();
-            middleName.PrintName();
-            
             Console.WriteLine($"Goodbye {firstName.Name} {middleName.Name} {lastName.Name}.  Press enter to exit.");
             Console.ReadLine();
         }

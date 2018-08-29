@@ -1,15 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NameParser.Names
 {
     class LastName : NameBase
     {
+        public FirstName FirstName { get; }
+        
         public LastName() : base("last")
         {}
 
-        public void PrintName()
+        public LastName(FirstName firstName) : this()
+        {
+            FirstName = firstName;
+        }
+
+        public override void PrintName()
         {
             var lastNameWithSpaces = "";
 
